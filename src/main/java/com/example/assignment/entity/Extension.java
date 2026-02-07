@@ -12,16 +12,11 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@SequenceGenerator(
-    name = "extension_seq_gen", 
-    sequenceName = "SEQ_EXTENSION", 
-    allocationSize = 1
-)
 public class Extension {
 	
 	//시퀀스를 이용한 PK 설정
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "extension_seq_gen")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //20자 제한, 중복 방지
