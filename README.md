@@ -36,11 +36,11 @@ src/main/java/com/example/assignment
 
 ### 해당 구조로 구현한 이유
 - 계층형 아키텍쳐
- - controller는 요청 및 응답
- - Service는 트랜잭션 관리와 비즈니스 로직을 담당
- - Repository는 데이터 접근(DAO의 기능)
- - Entity는 데이터베이스 테이블 스키마를 객체로 정의
- - 각 계층의 역할을 분리하여 유지보수성을 높였습니다.
+  - controller는 요청 및 응답
+  - Service는 트랜잭션 관리와 비즈니스 로직을 담당
+  - Repository는 데이터 접근(DAO의 기능)
+  - Entity는 데이터베이스 테이블 스키마를 객체로 정의
+  - 각 계층의 역할을 분리하여 유지보수성을 높였습니다.
 
 ## 🗂️ 3. 데이터베이스 설계 (Database Schema)
 
