@@ -7,7 +7,7 @@
 | --- | --- |
 | **Language** | Java 21 |
 | **Framework** | Spring Boot 3.5.10 |
-| **Database** | MySQL 8.0 (AWS RDS), H2 (Local) |
+| **Database** | MySQL 8.0 (AWS RDS) |
 | **ORM** | Spring Data JPA |
 | **Frontend** | JSP, JavaScript, jQuery |
 | **Infrastructure** | AWS EC2 (Ubuntu), AWS RDS |
