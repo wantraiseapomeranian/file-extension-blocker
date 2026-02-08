@@ -35,7 +35,7 @@ src/main/java/com/example/assignment
 ```
 
 ### 해당 구조로 구현한 이유
-#### 계층형 아키텍쳐 :
+- 계층형 아키텍쳐
  - controller는 요청 및 응답
  - Service는 트랜잭션 관리와 비즈니스 로직을 담당
  - Repository는 데이터 접근(DAO의 기능)
