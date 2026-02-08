@@ -25,6 +25,15 @@
         input[type="text"] { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
         button#addBtn { padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
         button#addBtn:hover { background: #5a6268; }
+        
+        //글자수 카운트
+        .char-count {
+            position: absolute;
+            right: 15px;
+            color: #888;
+            font-size: 12px;
+            pointer-events: none; /* 클릭 방해 안 하게 */
+        }
 
         /* 확장자 태그 리스트 박스 */
         .tag-box { 
@@ -66,6 +75,7 @@
         <div class="content">
             <div class="input-group">
                 <input type="text" id="customInput" placeholder="확장자 입력 (최대 20자)" maxlength="20">
+                <span class="char-count" id="charCount">0/20</span>
                 <button id="addBtn">+ 추가</button>
             </div>
 
@@ -88,6 +98,26 @@
 </div>
 
 <script>
+
+	//커스텀 확장자 길이 제한
+	const customInput = document.getElementById('customInput');
+    const charCount = document.getElementById('charCount');
+
+    customInput.addEventListener('input', function() {
+        const maxLength = 20;
+        let currentLength = this.value.length;
+        
+        // 입력된 글자 수가 20자를 초과하면 자르기
+        if (currentLength > maxLength) {
+            alert("확장자는 최대 20자까지만 입력 가능합니다.");
+            this.value = this.value.slice(0, maxLength);
+            currentLength = maxLength; // 자른 후 길이는 최대 길이
+        }
+
+        // 글자 수 업데이트 (0/20)
+        charCount.textContent = currentLength + '/' + maxLength;
+    });
+	
     //고정 확장자 체크박스 클릭 이벤트
     document.querySelectorAll('.fixed-chk').forEach(chk => {
         chk.addEventListener('change', function() {
